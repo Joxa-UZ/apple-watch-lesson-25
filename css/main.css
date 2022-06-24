@@ -1,34 +1,67 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* VARIABLES */
 
-:root{
-  /* --main-text-color : #fff; */
+:root {
+  --main-text-color: #000;
   /* --main-bg-color : #fff; */
   /* --main-font-size : 16px; */
-  /* --main-font-weight : 400; */
+  --main-font-weight: 700;
   /* --main-line-height : 1.5; */
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/roboto-v30-latin-regular.woff2") format("woff2"),
+    url("../fonts/roboto-v30-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/roboto-v30-latin-700.woff2") format("woff2"),
+    url("../fonts/roboto-v30-latin-700.woff") format("woff");
 }
 
 /* GENERAL */
 
-html{
+html {
   height: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-img{
+img {
   display: block;
   height: auto;
 }
 
-body{
+a {
+  display: inline-block;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100%;
   margin: 0;
   padding: 0;
-  /* font-family: "Roboto", "Arial", sans-serif; */
+  font-family: "Roboto", "Arial", sans-serif;
   /* font-size: 16px; */
-  /* font-weight: 400; */
+  font-weight: 400;
   /* line-height: var(--main-line-height); */
 }
 
@@ -41,6 +74,7 @@ body{
   padding: 0;
   border: 0;
   white-space: nowrap;
+  -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
@@ -48,8 +82,8 @@ body{
 
 /* CONTAINER */
 
-.container{
-  /* max-width: your-size-here; */
+.container {
+  max-width: 1040px;
   margin-right: auto;
   margin-left: auto;
   padding-right: 20px;
@@ -57,8 +91,291 @@ body{
 }
 
 /* STICKY-FOOTER */
-.site-main{
+.site-main {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
+.site-header-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 30px;
+}
 
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+  margin-right: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list-item {
+  margin-right: 30px;
+}
+
+.nav-list-item:last-child {
+  margin-right: 0;
+}
+
+.navbar-link {
+  padding-bottom: 6px;
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  text-decoration: none;
+  color: #333333;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.navbar-link:hover {
+  border-bottom: 3px solid #333333;
+}
+
+.search-input {
+  padding-bottom: 6px;
+  border: none;
+  border-bottom: 1px solid #333333;
+}
+
+.search-input::-webkit-input-placeholder {
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  color: #666666;
+}
+
+.search-input::-moz-placeholder {
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  color: #666666;
+}
+
+.search-input:-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  color: #666666;
+}
+
+.search-input::-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 150%;
+  text-align: center;
+  color: #666666;
+}
+
+.search-input::placeholder {
+  font-size: 15px;
+  line-height: 150%;
+  color: #666666;
+}
+
+.hero {
+  margin-top: 80px;
+  padding-top: 91px;
+  padding-bottom: 185px;
+  background-image: url(../images/watches.png);
+  background-position: calc(50% + 73%) calc(50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-bottom: 2px solid #DDDDDD;
+  ;
+}
+
+.hero-theme {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: var(--main-font-weight);
+  font-size: 50px;
+  line-height: 120%;
+  color: #000000;
+}
+
+.hero-text {
+  width: 450px;
+  margin: 0;
+  margin-bottom: 30px;
+  padding-left: 40px;
+  font-size: 16px;
+  line-height: 150%;
+  color: #777777;
+  border-left: 3px solid #888;
+}
+
+.hero-button {
+  padding: 12px 39px;
+  font-weight: var(--main-font-weight);
+  font-size: 18px;
+  line-height: 150%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #EA625C;
+  text-decoration: none;
+}
+
+.apple-second {
+  padding: 70px 0px;
+}
+
+.apple-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* align-items: center; */
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.apple-info-item {
+  width: 280px;
+}
+
+.apple-theme {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: var(--main-font-weight);
+  font-size: 17px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.apple-info-text {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 160%;
+  color: #333333;
+}
+
+.apple-under-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+span {
+  margin-right: 10px;
+  width: 8px;
+  height: 8px;
+  display: block;
+  background-color: #DDD;
+}
+
+
+
+.apple-info-item-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: var(--main-font-weight);
+  font-size: 16px;
+  line-height: 160%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #EA625C;
+}
+
+.apple-info-item-link::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 3px;
+  margin-right: 10px;
+  background-color: #EA625C;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.apple-info-under-box:hover .apple-info-item-link::before {
+  width: 60px;
+}
+
+.third-box {
+  padding: 70px 0px;
+}
+
+.third-section-box {
+  width: 490px;
+}
+
+.section-third {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.third-section-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site-footer {
+  padding: 240px 0px;
+  width: 100%;
+  background-image: url(../images/runners-1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.run-box {
+  width: 490px;
+  margin-left: auto;
+}
+
+.run-theme {
+  color: #fff;
+}
+
+.run-text {
+  color: #fff;
+}
+
+.site-footer>.hero-text {
+  border-color: #fff;
+}
+
+.hero-button:hover {
+  background-color: #C9514C;
+}
